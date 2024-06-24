@@ -1,5 +1,7 @@
 package com.example.evaluacion_parcial;
 
+import java.io.Serializable;
+
 public class Product {
     private int id;
     private String title;
@@ -40,5 +42,17 @@ public class Product {
         this.description = description;
         this.category = category;
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price='" + price + '\'' +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

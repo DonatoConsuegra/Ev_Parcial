@@ -32,6 +32,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         Product product = (Product) getIntent().getSerializableExtra("product");
 
+
         if (product != null) {
             Glide.with(this).load(product.getImage()).into(productImageView);
             productTitleTextView.setText(product.getTitle());

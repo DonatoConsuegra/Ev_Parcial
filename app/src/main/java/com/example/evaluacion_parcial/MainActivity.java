@@ -9,13 +9,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable{
 
     private ListView productListView;
     private ProductAdapter productAdapter;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Product selectedProduct = (Product) parent.getItemAtPosition(position);
                 Intent intent = new Intent(MainActivity.this, ProductDetailActivity.class);
-                intent.putExtra("product", selectedProduct.toString());
+                intent.getSerializableExtra("product");
                 startActivity(intent);
             }
         });
